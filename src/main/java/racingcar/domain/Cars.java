@@ -64,4 +64,8 @@ public class Cars {
             winners.add(target);
         }
     }
+
+    public List<Car> getCars() {
+        return cars;
+    }
 }

@@ -1,10 +1,14 @@
 package racingcar.controller;
 
+import racingcar.domain.Car;
 import racingcar.domain.Cars;
 import racingcar.domain.PlayCount;
 import racingcar.service.RacingCarService;
 import racingcar.service.RepeatService;
 import racingcar.view.InputView;
+import racingcar.view.OutputView;
+
+import java.util.List;
 
 public class RacingCarController {
 
@@ -24,8 +28,13 @@ public class RacingCarController {
     }
 
     private void playGame(Cars cars, PlayCount playCount) {
+        OutputView.printExecutionResultText();
+
         for (int count = 0; count < playCount.getCount(); count++) {
             racingCarService.raceOneTurn(cars);
+            OutputView.printRaceOneTurnResult(cars);
         }
+
+        List<Car> winners = cars.getWinners();
     }
 }
