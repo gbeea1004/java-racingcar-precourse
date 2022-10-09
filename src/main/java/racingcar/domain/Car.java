@@ -4,36 +4,29 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 public class Car {
 
-    private static final int MAX_CAR_NAME_LENGTH = 5;
     private static final int MIN_RANDOM_NO = 0;
     private static final int MAX_RANDOM_NO = 9;
     private static final int MOVEABLE_NO = 4;
-    private final String name;
-    private int distance;
+    private final Name name;
+    private final Distance distance;
 
     public Car(String name) {
-        checkNameLength(name);
-        this.name = name;
+        this.name = new Name(name);
+        distance = new Distance(0);
     }
 
     public void play() {
         if (canMove()) {
-            distance++;
+            distance.increase();
         }
     }
 
     public String getName() {
-        return name;
+        return name.getName();
     }
 
     public int getDistance() {
-        return distance;
-    }
-
-    private void checkNameLength(String name) {
-        if (name.length() > MAX_CAR_NAME_LENGTH) {
-            throw new IllegalArgumentException("[ERROR] 자동차 이름은 " + MAX_CAR_NAME_LENGTH + "자 이하만 가능합니다. length:" + name.length());
-        }
+        return distance.getDistance();
     }
 
     private boolean canMove() {
