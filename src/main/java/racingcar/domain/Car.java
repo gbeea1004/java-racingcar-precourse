@@ -8,7 +8,6 @@ import static racingcar.common.Number.MIN_RANDOM_NO;
 
 public class Car {
 
-    private static final int MOVEABLE_NO = 4;
     private final Name name;
     private final Distance distance;
 
@@ -32,6 +31,6 @@ public class Car {
     }
 
     private boolean canMove() {
-        return Randoms.pickNumberInRange(MIN_RANDOM_NO, MAX_RANDOM_NO) >= MOVEABLE_NO;
+        return Randoms.pickNumberInRange(MIN_RANDOM_NO, MAX_RANDOM_NO) >= CarState.MOVING_FORWARD.getNo();
     }
 }

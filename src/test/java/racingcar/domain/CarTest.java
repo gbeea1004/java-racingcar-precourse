@@ -15,8 +15,6 @@ import static org.mockito.Mockito.mockStatic;
 
 class CarTest {
 
-    private static final int MOVING_FORWARD = 4;
-    private static final int STOP = 3;
     private Car car;
 
     @BeforeEach
@@ -65,7 +63,7 @@ class CarTest {
         try (final MockedStatic<Randoms> mock = mockStatic(Randoms.class)) {
             // given
             mock.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
-                .thenReturn(MOVING_FORWARD);
+                .thenReturn(CarState.MOVING_FORWARD.getNo());
 
             // when
             // then
@@ -83,7 +81,7 @@ class CarTest {
         try (final MockedStatic<Randoms> mock = mockStatic(Randoms.class)) {
             // given
             mock.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
-                .thenReturn(STOP);
+                .thenReturn(CarState.STOP.getNo());
 
             // when
             // then
