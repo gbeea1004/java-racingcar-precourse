@@ -35,6 +35,8 @@ public class RacingCarController {
             OutputView.printRaceOneTurnResult(cars);
         }
 
+        // TODO: 일급 객체 사용하도록 수정
         List<Car> winners = cars.getWinners();
+        OutputView.printWinner(winners);
     }
 }
