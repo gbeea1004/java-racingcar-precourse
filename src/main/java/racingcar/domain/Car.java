@@ -22,15 +22,15 @@ public class Car {
         }
     }
 
+    private boolean canMove() {
+        return Randoms.pickNumberInRange(MIN_RANDOM_NO, MAX_RANDOM_NO) >= CarState.MOVING_FORWARD.getNo();
+    }
+
     public String getName() {
         return name.getName();
     }
 
     public int getDistance() {
         return distance.getDistance();
-    }
-
-    private boolean canMove() {
-        return Randoms.pickNumberInRange(MIN_RANDOM_NO, MAX_RANDOM_NO) >= CarState.MOVING_FORWARD.getNo();
     }
 }
