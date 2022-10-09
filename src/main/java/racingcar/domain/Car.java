@@ -3,10 +3,11 @@ package racingcar.domain;
 import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.common.Number;
 
+import static racingcar.common.Number.MAX_RANDOM_NO;
+import static racingcar.common.Number.MIN_RANDOM_NO;
+
 public class Car {
 
-    private static final int MIN_RANDOM_NO = 0;
-    private static final int MAX_RANDOM_NO = 9;
     private static final int MOVEABLE_NO = 4;
     private final Name name;
     private final Distance distance;
