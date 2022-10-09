@@ -9,8 +9,8 @@ public class Name {
     private final String name;
 
     public Name(String name) {
-        checkNameLength(name);
-        this.name = name.trim();
+        checkNameLength(name.trim());
+        this.name = name;
     }
 
     private void checkNameLength(String name) {

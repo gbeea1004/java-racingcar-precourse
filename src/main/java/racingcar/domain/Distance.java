@@ -12,6 +12,14 @@ public class Distance {
         distance++;
     }
 
+    public boolean isMoveMoreThen(Distance other) {
+        return this.distance > other.distance;
+    }
+
+    public boolean isSameDistance(Distance other) {
+        return this.distance == other.distance;
+    }
+
     public int getDistance() {
         return distance;
     }

@@ -22,6 +22,14 @@ public class Car {
         }
     }
 
+    public boolean isMoveMoreThen(Car other) {
+        return distance.isMoveMoreThen(other.distance);
+    }
+
+    public boolean isSameDistance(Car other) {
+        return distance.isSameDistance(other.distance);
+    }
+
     private boolean canMove() {
         return Randoms.pickNumberInRange(MIN_RANDOM_NO, MAX_RANDOM_NO) >= CarState.MOVING_FORWARD.getNo();
     }
