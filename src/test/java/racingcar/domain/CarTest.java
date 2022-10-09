@@ -47,6 +47,18 @@ class CarTest {
                                                .hasMessageStartingWith("[ERROR] 자동차 이름은 5자 이하만 가능합니다. length:");
     }
 
+    @DisplayName("자동차 이름이 빈값이면 예외가 발생한다")
+    @Test
+    void 자동차_이름이_빈값이면_예외가_발생한다() {
+        // given
+        String name = "";
+
+        // when
+        // then
+        assertThatThrownBy(() -> new Car(name)).isInstanceOf(IllegalArgumentException.class)
+                                               .hasMessageStartingWith("[ERROR] 자동차 이름은 빈값일 수 없습니다.");
+    }
+
     @DisplayName("자동차는 random 값이 4 이상일 경우 전진한다")
     @Test
     void 자동차는_random_값이_4_이상일_경우_전진한다() {
