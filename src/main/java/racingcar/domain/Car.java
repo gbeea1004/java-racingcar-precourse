@@ -16,7 +16,7 @@ public class Car {
         distance = new Distance(Number.ZERO);
     }
 
-    public void play() {
+    public void move() {
         if (canMove()) {
             distance.increase();
         }

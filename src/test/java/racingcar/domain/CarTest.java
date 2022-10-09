@@ -67,10 +67,10 @@ class CarTest {
 
             // when
             // then
-            car.play();
+            car.move();
             assertThat(car.getDistance()).isEqualTo(1);
 
-            car.play();
+            car.move();
             assertThat(car.getDistance()).isEqualTo(2);
         }
     }
@@ -85,10 +85,10 @@ class CarTest {
 
             // when
             // then
-            car.play();
+            car.move();
             assertThat(car.getDistance()).isEqualTo(0);
 
-            car.play();
+            car.move();
             assertThat(car.getDistance()).isEqualTo(0);
         }
     }

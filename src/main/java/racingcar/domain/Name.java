@@ -10,7 +10,7 @@ public class Name {
 
     public Name(String name) {
         checkNameLength(name);
-        this.name = name;
+        this.name = name.trim();
     }
 
     private void checkNameLength(String name) {
