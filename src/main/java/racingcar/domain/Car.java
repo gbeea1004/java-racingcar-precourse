@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.common.Number;
 
 public class Car {
 
@@ -12,7 +13,7 @@ public class Car {
 
     public Car(String name) {
         this.name = new Name(name);
-        distance = new Distance(0);
+        distance = new Distance(Number.ZERO);
     }
 
     public void play() {
