@@ -25,6 +25,12 @@ public class RacingCarController {
         playGame(cars, playCount);
     }
 
+    /**
+     * 게임을 시작한다
+     *
+     * @param cars 경주 할 자동차 리스트
+     * @param playCount 시도할 회수
+     */
     private void playGame(Cars cars, PlayCount playCount) {
         OutputView.printExecutionResultText();
 
