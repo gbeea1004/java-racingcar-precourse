@@ -31,6 +31,10 @@ public class Cars {
         }
     }
 
+    public void addCar(Car car) {
+        cars.add(car);
+    }
+
     public int getRaceCarCount() {
         return cars.size();
     }
@@ -41,10 +45,6 @@ public class Cars {
         for (String name : carNames) {
             addCar(new Car(name));
         }
-    }
-
-    private void addCar(Car car) {
-        cars.add(car);
     }
 
     public List<Car> getCars() {
