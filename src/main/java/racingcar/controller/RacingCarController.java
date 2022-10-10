@@ -1,14 +1,12 @@
 package racingcar.controller;
 
-import racingcar.domain.Car;
 import racingcar.domain.Cars;
 import racingcar.domain.PlayCount;
+import racingcar.domain.Winner;
 import racingcar.service.RacingCarService;
 import racingcar.service.RepeatService;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
-
-import java.util.List;
 
 public class RacingCarController {
 
@@ -35,8 +33,7 @@ public class RacingCarController {
             OutputView.printRaceOneTurnResult(cars);
         }
 
-        // TODO: 일급 객체 사용하도록 수정
-        List<Car> winners = cars.getWinners();
-        OutputView.printWinner(winners);
+        Winner winner = new Winner(cars);
+        OutputView.printWinner(winner.getNames());
     }
 }

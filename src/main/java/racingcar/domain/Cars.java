@@ -1,6 +1,6 @@
 package racingcar.domain;
 
-import racingcar.common.Number;
+import racingcar.exception.RacingCarIllegalArgumentException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +13,8 @@ public class Cars {
         createCars(carNames);
     }
 
-    private void createCars(String[] carNames) {
-        cars = new ArrayList<>();
-
-        for (String name : carNames) {
-            cars.add(new Car(name));
-        }
+    public Cars(List<Car> cars) {
+        this.cars = cars;
     }
 
     public void race() {
@@ -27,42 +23,28 @@ public class Cars {
         }
     }
 
-    public List<Car> getWinners() {
-        return getJointWinner(getWinner());
+    public Car getCar(int index) {
+        try {
+            return cars.get(index);
+        } catch (IndexOutOfBoundsException e) {
+            throw new RacingCarIllegalArgumentException("조회 할 자동차가 존재하지 않습니다. " + e.getMessage());
+        }
     }
 
-    private Car getWinner() {
-        Car winner = cars.get(Number.ZERO);
-
-        for (int index = 1; index < cars.size(); index++) {
-            winner = getWinner(winner, cars.get(index));
-        }
-
-        return winner;
+    public int getRaceCarCount() {
+        return cars.size();
     }
 
-    private Car getWinner(Car winner, Car target) {
-        if (target.isMoveMoreThen(winner)) {
-            winner = target;
-        }
+    private void createCars(String[] carNames) {
+        cars = new ArrayList<>();
 
-        return winner;
+        for (String name : carNames) {
+            addCar(new Car(name));
+        }
     }
 
-    private List<Car> getJointWinner(Car winner) {
-        List<Car> winners = new ArrayList<>();
-
-        for (int index = 0; index < cars.size(); index++) {
-            addJointWinner(winner, cars.get(index), winners);
-        }
-
-        return winners;
-    }
-
-    private void addJointWinner(Car winner, Car target, List<Car> winners) {
-        if (winner.isSameDistance(target)) {
-            winners.add(target);
-        }
+    private void addCar(Car car) {
+        cars.add(car);
     }
 
     public List<Car> getCars() {
