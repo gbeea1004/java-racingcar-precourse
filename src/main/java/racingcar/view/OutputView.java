@@ -14,8 +14,8 @@ public class OutputView {
     }
 
     public static void printRaceOneTurnResult(Cars cars) {
-        for (Car car : cars.getCars()) {
-            printCarResult(car);
+        for (int index = 0; index < cars.getRaceCarCount(); index++) {
+            printCarResult(cars.getCar(index));
         }
 
         System.out.println();
@@ -24,7 +24,7 @@ public class OutputView {
     private static void printCarResult(Car car) {
         System.out.print(car.getName() + " : ");
 
-        for (int i = 0; i < car.getDistance(); i++) {
+        for (int count = 0; count < car.getDistance(); count++) {
             System.out.print(MOVEMENT);
         }
 

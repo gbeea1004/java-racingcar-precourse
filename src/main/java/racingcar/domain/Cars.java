@@ -46,8 +46,4 @@ public class Cars {
             addCar(new Car(name));
         }
     }
-
-    public List<Car> getCars() {
-        return cars;
-    }
 }
